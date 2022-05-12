@@ -37,7 +37,7 @@ This will not change the release version of current npm packages(currently 0.0.7
 For example.
 
 ```bash
-  npm install @harmony-js/core@next
+  npm install @astra-js/core@next
 ```
 
 
@@ -60,7 +60,7 @@ This will change the release version of current npm packages to the latest versi
 For example.
 
 ```bash
-  npm install @harmony-js/core
+  npm install @astra-js/core
 ```
 
 

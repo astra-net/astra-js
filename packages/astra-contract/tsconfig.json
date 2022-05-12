@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src", "../../typings/**/*.d.ts"],
+  "references": [
+    {"path": "../astra-account"},
+    {"path": "../astra-crypto"},
+    {"path": "../astra-utils"},
+    {"path": "../astra-transaction"},
+    {"path": "../astra-network"}
+  ]
+}

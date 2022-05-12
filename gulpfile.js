@@ -4,14 +4,14 @@ const fs = require('fs');
 const path = require('path');
 
 const packages = [
-  'harmony-core',
-  'harmony-crypto',
-  'harmony-account',
-  'harmony-network',
-  'harmony-contract',
-  'harmony-utils',
-  'harmony-transaction',
-  'harmony-staking',
+  'astra-core',
+  'astra-crypto',
+  'astra-account',
+  'astra-network',
+  'astra-contract',
+  'astra-utils',
+  'astra-transaction',
+  'astra-staking',
 ];
 
 task('cleanBrowser', async () => {

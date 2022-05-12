@@ -1,6 +1,6 @@
-# Harmony JS-SDK Documentation
+# Astra JS-SDK Documentation
 
-## [CLICK ME!!](https://harmony-js-sdk-doc.s3-us-west-1.amazonaws.com/index.html) to see the documentation
+## [CLICK ME!!](https://astra-js-sdk-doc.s3-us-west-1.amazonaws.com/index.html) to see the documentation
 
 # metaDocumentation 
 ## Summary 
@@ -38,14 +38,14 @@ $ npm install
 ### Generate HTML
 ```
 $ cd docs
-$ npx typedoc --out ./build ../packages/ --ignoreCompilerErrors --theme default --name Harmony_SDK_Doc --readme ../README.md
+$ npx typedoc --out ./build ../packages/ --ignoreCompilerErrors --theme default --name Astra_SDK_Doc --readme ../README.md
 ```
 
 ### See the generated doc at local
 
 >open the `index.html` under the path `sdk/docs/build/index.html`
 
-## Step 2: Deploy on AWS (harmony core only!)
+## Step 2: Deploy on AWS (astra core only!)
 
 ### Create an AWS s3 bucket
 Actually, there are just two points needed!
@@ -70,7 +70,7 @@ After that, use AWS CLI to do following
 
 1. Create a Bucket
 ```
-aws s3 mb s3://harmony-js-sdk-doc
+aws s3 mb s3://astra-js-sdk-doc
 ```
 
 2. List all buckets you have created 
@@ -87,7 +87,7 @@ Here is some explanations
 > **./account**  
 > the path of folder which we want to upload
 > 
-> **s3://harmony-js-sdk-doc**  
+> **s3://astra-js-sdk-doc**  
 > the bucket name on AWS S3
 > 
 > **--grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers**   

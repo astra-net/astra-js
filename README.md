@@ -1,39 +1,39 @@
-# Harmony JavaScript SDK
+# Astra JavaScript SDK
 
-[![npm version](https://img.shields.io/npm/v/@harmony-js/core.svg?style=flat-square)](https://www.npmjs.com/package/@harmony-js/core)
-[![Build Status](https://travis-ci.com/FireStack-Lab/Harmony-sdk-core.svg?branch=master)](https://travis-ci.com/FireStack-Lab/Harmony-sdk-core)
+[![npm version](https://img.shields.io/npm/v/@astra-js/core.svg?style=flat-square)](https://www.npmjs.com/package/@astra-js/core)
+[![Build Status](https://travis-ci.com/FireStack-Lab/Astra-sdk-core.svg?branch=master)](https://travis-ci.com/FireStack-Lab/Astra-sdk-core)
 
-This is the Harmony Javascript SDK which provides an easier way to interact with Harmony blockchain.
+This is the Astra Javascript SDK which provides an easier way to interact with Astra blockchain.
 
-Please read the [documentation](https://jssdk.doc.hmny.io/) for full API doc.
+Please read the [documentation](https://jssdk.doc.astranetwork.com/) for full API doc.
 
 The SDK includes following packages with package-level documentation and examples inside each package.
 
-1. [@harmony-js/core](https://github.com/harmony-one/sdk/tree/master/packages/harmony-core)
-2. [@harmony-js/account](https://github.com/harmony-one/sdk/tree/master/packages/harmony-account)
-3. [@harmony-js/crypto](https://github.com/harmony-one/sdk/tree/master/packages/harmony-crypto)
-4. [@harmony-js/network](https://github.com/harmony-one/sdk/tree/master/packages/harmony-network)
-5. [@harmony-js/utils](https://github.com/harmony-one/sdk/tree/master/packages/harmony-utils)
-6. [@harmony-js/transaction](https://github.com/harmony-one/sdk/tree/master/packages/harmony-transaction)
-7. [@harmony-js/contract](https://github.com/harmony-one/sdk/tree/master/packages/harmony-contract)
-8. [@harmony-js/staking](https://github.com/harmony-one/sdk/tree/master/packages/harmony-staking)
+1. [@astra-js/core](https://github.com/astra-one/sdk/tree/master/packages/astra-core)
+2. [@astra-js/account](https://github.com/astra-one/sdk/tree/master/packages/astra-account)
+3. [@astra-js/crypto](https://github.com/astra-one/sdk/tree/master/packages/astra-crypto)
+4. [@astra-js/network](https://github.com/astra-one/sdk/tree/master/packages/astra-network)
+5. [@astra-js/utils](https://github.com/astra-one/sdk/tree/master/packages/astra-utils)
+6. [@astra-js/transaction](https://github.com/astra-one/sdk/tree/master/packages/astra-transaction)
+7. [@astra-js/contract](https://github.com/astra-one/sdk/tree/master/packages/astra-contract)
+8. [@astra-js/staking](https://github.com/astra-one/sdk/tree/master/packages/astra-staking)
 
 # Examples
 
-* [A Token Faucet Demo DApp](https://github.com/harmony-one/token-faucet-demo-dapp)
-* [Hackathon DApps](https://docs.harmony.one/home/showcases/applications): DApps built during our internal hackathon
-  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [onemoji](https://github.com/peekpi/onemoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-one](https://github.com/harmony-one/dapp-demo-crowdfunding)
-* [Cross-chain Apps](https://docs.harmony.one/home/showcases/crosschain) [the link contains code, demo, and more information]
-* [DeFi Apps](https://docs.harmony.one/home/showcases/defi)
-* [DevPost Hackathon Apps](https://docs.harmony.one/home/showcases/hackathons)
-* Eth<>Harmony Bridge Components: [frontend](https://github.com/harmony-one/ethhmy-bridge.frontend), [backend](https://github.com/harmony-one/ethhmy-bridge.appengine), [smart contracts](https://github.com/harmony-one/ethhmy-bridge), [test scripts](https://github.com/harmony-one/ethhmy-bridge.tests)
-* Eth<>Harmony bridge SDKs: [main sdk](https://github.com/harmony-one/ethhmy-bridge.sdk), [bridge UI widget](https://github.com/harmony-one/ethhmy-bridge.ui-sdk)
-* Swoop Dex: [interface](https://github.com/harmony-one/swoop-interface), [cli](https://github.com/harmony-one/swoop-cli), [sdk](https://github.com/harmony-one/swoop-sdk), [deployment](https://github.com/harmony-one/swoop-deployment), [misc](https://github.com/harmony-one/swoop-misc), [lib](https://github.com/harmony-one/swoop-lib), [periphery](https://github.com/harmony-one/swoop-periphery), [core](https://github.com/harmony-one/swoop-core), [testing](https://github.com/harmony-one/swoop-testing), [utils](https://github.com/harmony-one/swoop-utils)
-* [Iris Bridge](https://github.com/harmony-one/ethhmy-bridge-v2): inspired from near's rainbow bridge
-* [Animoca's BeastQuest Game](https://github.com/harmony-one/BeastQuest)
-* [Chainlink Testnet Integration Demo](https://github.com/harmony-one/chainlink-demo-project)
-* [NFT Store DApp](https://github.com/harmony-one/nft-store)
-* [old dapp-examples](https://github.com/harmony-one/dapp-examples): some of them may be outdated!
+* [A Token Faucet Demo DApp](https://github.com/astra-one/token-faucet-demo-dapp)
+* [Hackathon DApps](https://docs.astra.one/home/showcases/applications): DApps built during our internal hackathon
+  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [onemoji](https://github.com/peekpi/onemoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-one](https://github.com/astra-one/dapp-demo-crowdfunding)
+* [Cross-chain Apps](https://docs.astra.one/home/showcases/crosschain) [the link contains code, demo, and more information]
+* [DeFi Apps](https://docs.astra.one/home/showcases/defi)
+* [DevPost Hackathon Apps](https://docs.astra.one/home/showcases/hackathons)
+* Eth<>Astra Bridge Components: [frontend](https://github.com/astra-one/ethastra-bridge.frontend), [backend](https://github.com/astra-one/ethastra-bridge.appengine), [smart contracts](https://github.com/astra-one/ethastra-bridge), [test scripts](https://github.com/astra-one/ethastra-bridge.tests)
+* Eth<>Astra bridge SDKs: [main sdk](https://github.com/astra-one/ethastra-bridge.sdk), [bridge UI widget](https://github.com/astra-one/ethastra-bridge.ui-sdk)
+* Swoop Dex: [interface](https://github.com/astra-one/swoop-interface), [cli](https://github.com/astra-one/swoop-cli), [sdk](https://github.com/astra-one/swoop-sdk), [deployment](https://github.com/astra-one/swoop-deployment), [misc](https://github.com/astra-one/swoop-misc), [lib](https://github.com/astra-one/swoop-lib), [periphery](https://github.com/astra-one/swoop-periphery), [core](https://github.com/astra-one/swoop-core), [testing](https://github.com/astra-one/swoop-testing), [utils](https://github.com/astra-one/swoop-utils)
+* [Iris Bridge](https://github.com/astra-one/ethastra-bridge-v2): inspired from near's rainbow bridge
+* [Animoca's BeastQuest Game](https://github.com/astra-one/BeastQuest)
+* [Chainlink Testnet Integration Demo](https://github.com/astra-one/chainlink-demo-project)
+* [NFT Store DApp](https://github.com/astra-one/nft-store)
+* [old dapp-examples](https://github.com/astra-one/dapp-examples): some of them may be outdated!
 
 
 # Installation
@@ -52,10 +52,10 @@ This library works on both nodejs and browser. Please use it according to your u
 ```bash
 
 # npm
-npm install @harmony-js/core@next 
+npm install @astra-js/core@next 
 
 # yarn
-yarn add @harmony-js/core@next
+yarn add @astra-js/core@next
 
 # tslib is required, we'd better install it as well
 npm install tslib
@@ -95,7 +95,7 @@ yarn test:src
 
 1. `.env` file defines configuration, edit if you have custom settings
    
-2. Run harmony node locally, follow the instructions: https://github.com/harmony-one/harmony
+2. Run astra node locally, follow the instructions: https://github.com/astra-one/astra
    
 3. Wait for 1-2 mins, and run this:
 

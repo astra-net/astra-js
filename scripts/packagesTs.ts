@@ -1,12 +1,12 @@
 const packages = [
-  'harmony-utils',
-  'harmony-crypto',
-  'harmony-account',
-  'harmony-network',
-  'harmony-transaction',
-  'harmony-staking',
-  'harmony-contract',
-  'harmony-core',
+  'astra-utils',
+  'astra-crypto',
+  'astra-account',
+  'astra-network',
+  'astra-transaction',
+  'astra-staking',
+  'astra-contract',
+  'astra-core',
 ];
 
 export { packages };

@@ -30,10 +30,10 @@ const files = [...app.expandInputFiles([pkgSrc])];
 
 const nameArray = pkgPath.split('/');
 const index = nameArray.findIndex(
-  (value) => value.startsWith('harmony') && !value.startsWith('harmony-js'),
+  (value) => value.startsWith('astra') && !value.startsWith('astra-js'),
 );
 
-const docPath = nameArray[index]; //.replace('harmony-', '');
+const docPath = nameArray[index]; //.replace('astra-', '');
 
 // const project = app.convert();
 const outputDir = `${pkgPath}/doc/${target}`;

@@ -17,8 +17,8 @@ async function generateSchemas() {
     // @ts-ignore
     .filter((pkg) => {
       return (
-        pkg !== 'harmony-' &&
-        outputs.indexOf(pkg.replace('harmony-', '')) !== -1
+        pkg !== 'astra-' &&
+        outputs.indexOf(pkg.replace('astra-', '')) !== -1
       );
     })
     .forEach((pkg) => {

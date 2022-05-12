@@ -1,8 +1,8 @@
-import { harmony } from './harmony';
+import { astra } from './astra';
 // tslint:disable-next-line: no-implicit-dependencies
-import { Transaction, TxStatus } from '@harmony-js/transaction';
+import { Transaction, TxStatus } from '@astra-js/transaction';
 // tslint:disable-next-line: no-implicit-dependencies
-import { isHash, numberToHex } from '@harmony-js/utils';
+import { isHash, numberToHex } from '@astra-js/utils';
 import txnJsons from '../fixtures/transactions.json';
 import demoAccounts from '../fixtures/testAccount.json';
 
@@ -18,7 +18,7 @@ describe('test Transaction using SDK', () => {
     const txns = txnJsons.transactions;
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < txns.length; i += 1) {
-      const newTxn = harmony.transactions.newTx();
+      const newTxn = astra.transactions.newTx();
 
       newTxn.recover(txns[i].rawTransaction);
       expect(newTxn.txParams.from).toEqual(txns[i].senderAddress);
@@ -31,21 +31,21 @@ describe('test Transaction using SDK', () => {
   });
   it('should test signTransaction', async () => {
     const txnObject = {
-      to: harmony.crypto.getAddress(receiver.Address).bech32,
+      to: astra.crypto.getAddress(receiver.Address).bech32,
       value: '0x64',
       gasLimit: '210000',
-      gasPrice: new harmony.utils.Unit('100').asGwei().toWei(),
+      gasPrice: new astra.utils.Unit('100').asGwei().toWei(),
     };
 
-    const txn = harmony.transactions.newTx(txnObject);
-    signed = await harmony.wallet.signTransaction(txn);
+    const txn = astra.transactions.newTx(txnObject);
+    signed = await astra.wallet.signTransaction(txn);
 
     expect(signed.isSigned()).toEqual(true);
   });
   it('should send transaction', async () => {
     const [sentTxn, id] = await signed.sendTransaction();
     expect(sentTxn.isPending()).toEqual(true);
-    expect(harmony.utils.isHash(id)).toEqual(true);
+    expect(astra.utils.isHash(id)).toEqual(true);
     txId = id;
     sent = sentTxn;
   });
@@ -61,13 +61,13 @@ describe('test Transaction using SDK', () => {
   });
   it('should test transaction observed events', async () => {
     const txnObject = {
-      to: harmony.crypto.getAddress(receiver.Address).bech32,
-      value: new harmony.utils.Unit('100').asGwei().toWei(),
-      gasLimit: new harmony.utils.Unit('210000').asWei().toWei(),
-      gasPrice: new harmony.utils.Unit('100').asGwei().toWei(),
+      to: astra.crypto.getAddress(receiver.Address).bech32,
+      value: new astra.utils.Unit('100').asGwei().toWei(),
+      gasLimit: new astra.utils.Unit('210000').asWei().toWei(),
+      gasPrice: new astra.utils.Unit('100').asGwei().toWei(),
     };
 
-    const txn = harmony.transactions.newTx(txnObject);
+    const txn = astra.transactions.newTx(txnObject);
     txn
       .observed()
       .on('transactionHash', (transactionHash) => {
@@ -84,7 +84,7 @@ describe('test Transaction using SDK', () => {
       .on('error', (error) => {
         expect(error).toBeTruthy();
       });
-    const txnSigned = await harmony.wallet.signTransaction(txn);
+    const txnSigned = await astra.wallet.signTransaction(txn);
     const [txnSent, id] = await txnSigned.sendTransaction();
     expect(txnSent.txStatus).toEqual(TxStatus.PENDING);
     await txnSigned.confirm(id);
@@ -92,27 +92,27 @@ describe('test Transaction using SDK', () => {
 });
 
 function checkTransactionReceipt(data: any) {
-  return harmony.utils.validateArgs(
+  return astra.utils.validateArgs(
     data,
     {
-      blockHash: [harmony.utils.isHash],
-      blockNumber: [harmony.utils.isHex],
+      blockHash: [astra.utils.isHash],
+      blockNumber: [astra.utils.isHex],
       contractAddress: [
         // tslint:disable-next-line: no-shadowed-variable
-        (data: any) => data === null || harmony.utils.isValidAddress,
+        (data: any) => data === null || astra.utils.isValidAddress,
       ],
-      cumulativeGasUsed: [harmony.utils.isHex],
-      from: [harmony.utils.isValidAddress],
-      gasUsed: [harmony.utils.isHex],
-      logs: [harmony.utils.isArray],
-      logsBloom: [harmony.utils.isHex],
+      cumulativeGasUsed: [astra.utils.isHex],
+      from: [astra.utils.isValidAddress],
+      gasUsed: [astra.utils.isHex],
+      logs: [astra.utils.isArray],
+      logsBloom: [astra.utils.isHex],
 
-      shardID: [harmony.utils.isNumber],
+      shardID: [astra.utils.isNumber],
       // tslint:disable-next-line: no-shadowed-variable
-      to: [(data: any) => data === '0x' || harmony.utils.isValidAddress],
-      transactionHash: [harmony.utils.isHash],
-      transactionIndex: [harmony.utils.isHex],
+      to: [(data: any) => data === '0x' || astra.utils.isValidAddress],
+      transactionHash: [astra.utils.isHash],
+      transactionIndex: [astra.utils.isHex],
     },
-    { root: [harmony.utils.isHash] },
+    { root: [astra.utils.isHash] },
   );
 }

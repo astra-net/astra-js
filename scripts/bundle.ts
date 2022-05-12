@@ -30,7 +30,7 @@ function getKeys(p) {
 
   const {dependencies} = JSON.parse(data);
 
-  // .filter((d) => !/harmony/.test(d))
+  // .filter((d) => !/astra/.test(d))
   const keys = dependencies ? Object.keys(dependencies) : [];
   return keys;
 }
