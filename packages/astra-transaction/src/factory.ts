@@ -42,7 +42,7 @@ export class TransactionFactory {
    * @example
    * ```javascript
    * const txn = astra.transactions.newTx({
-   *   to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+   *   to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
    *   value: '10000',
    *   gasLimit: '210000',
    *   shardID: 0,

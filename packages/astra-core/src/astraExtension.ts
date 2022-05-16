@@ -181,13 +181,18 @@ export class AstraExtension {
           );
           transaction.setParams({
             ...transaction.txParams,
-            from: crypto.getAddress(extensionAccount.address).bech32,
-            nonce: Number.parseInt(utils.isHex(nonce.result.toString()) ? utils.hexToNumber(nonce.result.toString()) : nonce.result.toString(), 10),
+            from: crypto.getAddress(extensionAccount.address).basicHex,
+            nonce: Number.parseInt(
+              utils.isHex(nonce.result.toString())
+                ? utils.hexToNumber(nonce.result.toString())
+                : nonce.result.toString(),
+              10,
+            ),
           });
         } else {
           transaction.setParams({
             ...transaction.txParams,
-            from: crypto.getAddress(extensionAccount.address).bech32,
+            from: crypto.getAddress(extensionAccount.address).basicHex,
           });
         }
 

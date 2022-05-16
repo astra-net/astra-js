@@ -4,16 +4,10 @@
  * @hidden
  */
 
-import {
-  HttpProvider,
-  WSProvider,
-  RPCRequestPayload,
-  ResponseMiddleware,
-} from '@astra-js/network';
+import { HttpProvider, WSProvider, RPCRequestPayload, ResponseMiddleware } from '@astra-js/network';
 
-import { ChainID, ChainType, Unit, isBech32Address } from '@astra-js/utils';
+import { ChainID, ChainType, Unit } from '@astra-js/utils';
 import { HDNode } from '@astra-js/account';
-import { fromBech32, HRP } from '@astra-js/crypto';
 
 const packageInfo = { version: '1.0.0' };
 
@@ -178,9 +172,6 @@ export class TruffleProvider extends HDNode {
                 .asWei()
                 .toWei()
                 .toString('hex')}`;
-            }
-            if (isBech32Address(response.result.miner)) {
-              response.result.miner = fromBech32(response.result.miner, HRP);
             }
             callback(null, response);
           } catch (error) {

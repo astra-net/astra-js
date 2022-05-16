@@ -16,8 +16,6 @@ npm install @astra-js/crypto
 *   encode,
 *   decode,
 *   randomBytes,
-*   toBech32,
-*   fromBech32,
 *   AstraAddress,
 *   generatePrivateKey,
 *   getPubkeyFromPrivateKey,
@@ -35,9 +33,8 @@ const bytes = randomBytes(20);
 const addr = new AstraAddress(bytes);
 
 console.log(addr.checksum);
-console.log(addr.bech32);
 
-console.log(AstraAddress.isValidBech32(addr.bech32));
+console.log(AstraAddress.isValidBasic(addr.basic));
 ```
 
 RLP apis

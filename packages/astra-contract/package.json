@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@astra-js/account": "0.1.56",
+    "@astra-js/account": "0.1.57",
     "@astra-js/crypto": "0.1.56",
     "@astra-js/network": "0.1.56",
     "@astra-js/transaction": "0.1.56",

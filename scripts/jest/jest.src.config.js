@@ -25,7 +25,7 @@ const config = {
   moduleNameMapper: {
     'cross-fetch': 'jest-fetch-mock',
   },
-  testURL: 'http://localhost',
+  testURL: 'https://localhost',
   coverageThreshold: {
     global: {
       branches: 10,

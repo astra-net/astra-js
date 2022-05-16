@@ -142,7 +142,7 @@
   },
   "name": "astra-sdk-core",
   "dependencies": {
-    "@astra-js/core": "^0.1.36",
+    "@astra-js/core": "^0.1.57",
     "tslib": "^1.10.0",
     "typedoc-plugin-internal-external": "^2.1.1"
   }

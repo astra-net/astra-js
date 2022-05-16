@@ -115,7 +115,7 @@ describe('e2e test transactions by RPC Method', () => {
     for (let i = 0; i < transactionInfoList; i += 1) {
       const transactionInfo: TransactionInfo = transactionInfoList[i];
       const nonce: any = await astra.blockchain.getTransactionCount({
-        address: transactions[i].senderAddressBech32,
+        address: transactions[i].senderAddress,
         blockNumber: transactionInfo.blockNumber,
       });
       expect(nonce.result).toEqual(transactions[i].nonce);

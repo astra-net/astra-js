@@ -15,8 +15,6 @@ import {
   isPublicKey,
   isPrivateKey,
   isAddress,
-  isBech32Address,
-  isBech32TestNetAddress,
   isValidAddress,
   isHash,
   isBlockNumber,
@@ -43,8 +41,6 @@ export const validatorArray: any = {
   isAddress: [isAddress],
   isHash: [isHash],
   isBlockNumber: [isBlockNumber],
-  isBech32Address: [isBech32Address],
-  isBech32TestNetAddress: [isBech32TestNetAddress],
   isValidAddress: [isValidAddress],
 };
 

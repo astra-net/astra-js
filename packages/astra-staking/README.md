@@ -45,8 +45,8 @@ astra.stakings.setTxParams({
 Create delegate staking transaction
 ```javascript
 const delegate = astra.stakings.delegate({
-  delegatorAddress: 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7',
-  validatorAddress: 'one1vfqqagdzz352mtvdl69v0hw953hm993n6v26yl',
+  delegatorAddress: '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D',
+  validatorAddress: '0x62400ea1a21468ADad8dfe8AC7dDc5a46fb29633',
   amount: numberToHex(new Unit(1000).asOne().toWei())
 });
 const delegateStakingTx = delegate.build();
@@ -54,7 +54,7 @@ const delegateStakingTx = delegate.build();
 
 Sign and send the delegate transaction and receive confirmation
 ```javascript
-// key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+// key corresponds to 0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D, only has testnet balance
 astra.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
 astra.wallet.signStaking(delegateStakingTx).then(signedTxn => {
@@ -71,8 +71,8 @@ Similarily, undelegate and collect reward transactions can be composed, signed a
 Create undelegate staking transaction
 ```javascript
 const undelegate = astra.stakings.undelegate({
-  delegatorAddress: 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7',
-  validatorAddress: 'one1vfqqagdzz352mtvdl69v0hw953hm993n6v26yl',
+  delegatorAddress: '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D',
+  validatorAddress: '0x62400ea1a21468ADad8dfe8AC7dDc5a46fb29633',
   amount: numberToHex(new Unit(1000).asOne().toWei())
 });
 const undelegateStakingTx = undelegate.build();
@@ -81,7 +81,7 @@ const undelegateStakingTx = undelegate.build();
 Create collect rewards staking transaction
 ```javascript
 const collectRewards = astra.stakings.collectRewards({
-  delegatorAddress: 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
+  delegatorAddress: '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'
 });
 const collectRewardsStakingTx = collectRewards.build();
 ```

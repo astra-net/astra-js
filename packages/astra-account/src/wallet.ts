@@ -217,7 +217,7 @@ class Wallet {
    * ```javascript
    * const key_1 = '45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e';
    * wallet.addByPrivateKey(key_1);
-   * wallet.encryptAccount('one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7', '12345').then((value) => {
+   * wallet.encryptAccount('0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D', '12345').then((value) => {
    *   console.log(value);
    * })
    * ```
@@ -253,9 +253,9 @@ class Wallet {
    * ```javascript
    * const key_1 = '45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e';
    * wallet.addByPrivateKey(key_1);
-   * wallet.encryptAccount('one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7', '12345')
+   * wallet.encryptAccount('0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D', '12345')
    * .then(() => {
-   *   wallet.decryptAccount('one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7', '12345')
+   *   wallet.decryptAccount('0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D', '12345')
    *   .then((value) =>{
    *      console.log(value);
    *   });
@@ -288,7 +288,7 @@ class Wallet {
    * ```
    * const key_1 = '45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e';
    * wallet.addByPrivateKey(key_1);
-   * console.log(wallet.getAccount('one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'));
+   * console.log(wallet.getAccount('0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'));
    * ```
    */
   getAccount(address: string): Account | undefined {

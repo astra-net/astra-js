@@ -37,7 +37,7 @@ Create a Astra instance connecting to testnet
 Creating a new transaction using parameters
 ```javascript
 * const txn = astra.transactions.newTx({
-*   to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+*   to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
 *   value: new Unit(1).asOne().toWei(),
 *   // gas limit, you can use string
 *   gasLimit: '21000',
@@ -63,7 +63,7 @@ Getting the RLP encoding of a transaction (rawTransaction), along with raw trans
 
 Sign the transaction using a wallet and send the transaction, wait for confirmation and print receipt
 ```javascript
-* // key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+* // key corresponds to 0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D, only has testnet balance
 * astra.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
 * astra.wallet.signTransaction(txn).then(signedTxn => {

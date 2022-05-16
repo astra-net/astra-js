@@ -3,10 +3,8 @@
  * @module astra-crypto
  */
 
-import { isAddress, isBech32Address, isBech32TestNetAddress } from '@astra-js/utils';
-
+import { isAddress } from '@astra-js/utils';
 import { toChecksumAddress } from './keyTool';
-import { fromBech32, toBech32, HRP, tHRP } from './bech32';
 
 /**
  * ### How to use it?
@@ -16,8 +14,8 @@ import { fromBech32, toBech32, HRP, tHRP } from './bech32';
  * const { AstraAddress } = require('@astra-js/crypto');
  *
  * // Step 2: call functions
- * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
- * const res = AstraAddress.isValidBech32(addr);
+ * const addr = '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'
+ * const res = AstraAddress.isValidBasic(addr);
  * console.log(res);
  * ```
  */
@@ -25,8 +23,8 @@ export class AstraAddress {
   /**
    * @example
    * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
-   * const res = AstraAddress.isValidBech32(addr);
+   * const addr = '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'
+   * const res = AstraAddress.isValidBasic(addr);
    * console.log(res);
    * ```
    */
@@ -38,7 +36,7 @@ export class AstraAddress {
   /**
    * @example
    * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
+   * const addr = '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'
    * const res = AstraAddress.isValidChecksum(addr);
    * console.log(res);
    * ```
@@ -46,32 +44,6 @@ export class AstraAddress {
   static isValidChecksum(str: string) {
     const toTest = new AstraAddress(str);
     return toTest.raw === toTest.checksum;
-  }
-
-  /**
-   * @example
-   * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
-   * const res = AstraAddress.isValidBech32(addr);
-   * console.log(res);
-   * ```
-   */
-  static isValidBech32(str: string) {
-    const toTest = new AstraAddress(str);
-    return toTest.raw === toTest.bech32;
-  }
-
-  /**
-   * @example
-   * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
-   * const res = AstraAddress.isValidBech32TestNet(addr);
-   * console.log(res);
-   * ```
-   */
-  static isValidBech32TestNet(str: string) {
-    const toTest = new AstraAddress(str);
-    return toTest.raw === toTest.bech32TestNet;
   }
 
   raw: string;
@@ -82,7 +54,7 @@ export class AstraAddress {
    *
    * @example
    * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
+   * const addr = '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'
    * const instance = new AstraAddress(addr);
    * console.log(instance.basicHex);
    * ```
@@ -94,37 +66,13 @@ export class AstraAddress {
   /**
    * @example
    * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
+   * const addr = '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'
    * const instance = new AstraAddress(addr);
    * console.log(instance.checksum);
    * ```
    */
   get checksum() {
     return toChecksumAddress(`0x${this.basic}`);
-  }
-
-  /**
-   * @example
-   * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
-   * const instance = new AstraAddress(addr);
-   * console.log(instance.bech32);
-   * ```
-   */
-  get bech32() {
-    return toBech32(this.basic, HRP);
-  }
-
-  /**
-   * @example
-   * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
-   * const instance = new AstraAddress(addr);
-   * console.log(instance.bech32TestNet);
-   * ```
-   */
-  get bech32TestNet() {
-    return toBech32(this.basic, tHRP);
   }
 
   constructor(raw: string) {
@@ -139,7 +87,7 @@ export class AstraAddress {
    *
    * @example
    * ```
-   * const addr = 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7'
+   * const addr = '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D'
    * const instance = new AstraAddress(addr);
    * const res = instance.getBasic(addr);
    * console.log(res)
@@ -147,21 +95,9 @@ export class AstraAddress {
    */
   private getBasic(addr: string) {
     const basicBool = isAddress(addr);
-    const bech32Bool = isBech32Address(addr);
-    const bech32TestNetBool = isBech32TestNetAddress(addr);
 
     if (basicBool) {
       return addr.replace('0x', '').toLowerCase();
-    }
-
-    if (bech32Bool) {
-      const fromB32 = fromBech32(addr, HRP);
-      return fromB32.replace('0x', '').toLowerCase();
-    }
-
-    if (bech32TestNetBool) {
-      const fromB32TestNet = fromBech32(addr, tHRP);
-      return fromB32TestNet.replace('0x', '').toLowerCase();
     }
 
     throw new Error(`"${addr}" is an invalid address format`);

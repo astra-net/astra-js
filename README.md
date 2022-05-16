@@ -9,31 +9,31 @@ Please read the [documentation](https://jssdk.doc.astranetwork.com/) for full AP
 
 The SDK includes following packages with package-level documentation and examples inside each package.
 
-1. [@astra-js/core](https://github.com/astra-one/sdk/tree/master/packages/astra-core)
-2. [@astra-js/account](https://github.com/astra-one/sdk/tree/master/packages/astra-account)
-3. [@astra-js/crypto](https://github.com/astra-one/sdk/tree/master/packages/astra-crypto)
-4. [@astra-js/network](https://github.com/astra-one/sdk/tree/master/packages/astra-network)
-5. [@astra-js/utils](https://github.com/astra-one/sdk/tree/master/packages/astra-utils)
-6. [@astra-js/transaction](https://github.com/astra-one/sdk/tree/master/packages/astra-transaction)
-7. [@astra-js/contract](https://github.com/astra-one/sdk/tree/master/packages/astra-contract)
-8. [@astra-js/staking](https://github.com/astra-one/sdk/tree/master/packages/astra-staking)
+1. [@astra-js/core](https://github.com/astra-net/sdk/tree/master/packages/astra-core)
+2. [@astra-js/account](https://github.com/astra-net/sdk/tree/master/packages/astra-account)
+3. [@astra-js/crypto](https://github.com/astra-net/sdk/tree/master/packages/astra-crypto)
+4. [@astra-js/network](https://github.com/astra-net/sdk/tree/master/packages/astra-network)
+5. [@astra-js/utils](https://github.com/astra-net/sdk/tree/master/packages/astra-utils)
+6. [@astra-js/transaction](https://github.com/astra-net/sdk/tree/master/packages/astra-transaction)
+7. [@astra-js/contract](https://github.com/astra-net/sdk/tree/master/packages/astra-contract)
+8. [@astra-js/staking](https://github.com/astra-net/sdk/tree/master/packages/astra-staking)
 
 # Examples
 
-* [A Token Faucet Demo DApp](https://github.com/astra-one/token-faucet-demo-dapp)
+* [A Token Faucet Demo DApp](https://github.com/astra-net/token-faucet-demo-dapp)
 * [Hackathon DApps](https://docs.astra.one/home/showcases/applications): DApps built during our internal hackathon
-  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [onemoji](https://github.com/peekpi/onemoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-one](https://github.com/astra-one/dapp-demo-crowdfunding)
+  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [onemoji](https://github.com/peekpi/onemoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-one](https://github.com/astra-net/dapp-demo-crowdfunding)
 * [Cross-chain Apps](https://docs.astra.one/home/showcases/crosschain) [the link contains code, demo, and more information]
 * [DeFi Apps](https://docs.astra.one/home/showcases/defi)
 * [DevPost Hackathon Apps](https://docs.astra.one/home/showcases/hackathons)
-* Eth<>Astra Bridge Components: [frontend](https://github.com/astra-one/ethastra-bridge.frontend), [backend](https://github.com/astra-one/ethastra-bridge.appengine), [smart contracts](https://github.com/astra-one/ethastra-bridge), [test scripts](https://github.com/astra-one/ethastra-bridge.tests)
-* Eth<>Astra bridge SDKs: [main sdk](https://github.com/astra-one/ethastra-bridge.sdk), [bridge UI widget](https://github.com/astra-one/ethastra-bridge.ui-sdk)
-* Swoop Dex: [interface](https://github.com/astra-one/swoop-interface), [cli](https://github.com/astra-one/swoop-cli), [sdk](https://github.com/astra-one/swoop-sdk), [deployment](https://github.com/astra-one/swoop-deployment), [misc](https://github.com/astra-one/swoop-misc), [lib](https://github.com/astra-one/swoop-lib), [periphery](https://github.com/astra-one/swoop-periphery), [core](https://github.com/astra-one/swoop-core), [testing](https://github.com/astra-one/swoop-testing), [utils](https://github.com/astra-one/swoop-utils)
-* [Iris Bridge](https://github.com/astra-one/ethastra-bridge-v2): inspired from near's rainbow bridge
-* [Animoca's BeastQuest Game](https://github.com/astra-one/BeastQuest)
-* [Chainlink Testnet Integration Demo](https://github.com/astra-one/chainlink-demo-project)
-* [NFT Store DApp](https://github.com/astra-one/nft-store)
-* [old dapp-examples](https://github.com/astra-one/dapp-examples): some of them may be outdated!
+* Eth<>Astra Bridge Components: [frontend](https://github.com/astra-net/ethastra-bridge.frontend), [backend](https://github.com/astra-net/ethastra-bridge.appengine), [smart contracts](https://github.com/astra-net/ethastra-bridge), [test scripts](https://github.com/astra-net/ethastra-bridge.tests)
+* Eth<>Astra bridge SDKs: [main sdk](https://github.com/astra-net/ethastra-bridge.sdk), [bridge UI widget](https://github.com/astra-net/ethastra-bridge.ui-sdk)
+* Swoop Dex: [interface](https://github.com/astra-net/swoop-interface), [cli](https://github.com/astra-net/swoop-cli), [sdk](https://github.com/astra-net/swoop-sdk), [deployment](https://github.com/astra-net/swoop-deployment), [misc](https://github.com/astra-net/swoop-misc), [lib](https://github.com/astra-net/swoop-lib), [periphery](https://github.com/astra-net/swoop-periphery), [core](https://github.com/astra-net/swoop-core), [testing](https://github.com/astra-net/swoop-testing), [utils](https://github.com/astra-net/swoop-utils)
+* [Iris Bridge](https://github.com/astra-net/ethastra-bridge-v2): inspired from near's rainbow bridge
+* [Animoca's BeastQuest Game](https://github.com/astra-net/BeastQuest)
+* [Chainlink Testnet Integration Demo](https://github.com/astra-net/chainlink-demo-project)
+* [NFT Store DApp](https://github.com/astra-net/nft-store)
+* [old dapp-examples](https://github.com/astra-net/dapp-examples): some of them may be outdated!
 
 
 # Installation
@@ -95,7 +95,7 @@ yarn test:src
 
 1. `.env` file defines configuration, edit if you have custom settings
    
-2. Run astra node locally, follow the instructions: https://github.com/astra-one/astra
+2. Run astra node locally, follow the instructions: https://github.com/astra-net/astra-network
    
 3. Wait for 1-2 mins, and run this:
 

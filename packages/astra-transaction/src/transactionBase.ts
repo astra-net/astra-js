@@ -15,11 +15,7 @@ export class TransactionBase implements AbstractTransaction {
   static normalizeAddress(address: string) {
     if (address === '0x') {
       return '0x';
-    } else if (
-      AstraAddress.isValidChecksum(address) ||
-      AstraAddress.isValidBech32(address) ||
-      AstraAddress.isValidBech32TestNet(address)
-    ) {
+    } else if (AstraAddress.isValidChecksum(address)) {
       return getAddress(address).checksum;
     } else {
       throw new Error(`Address format is not supported`);

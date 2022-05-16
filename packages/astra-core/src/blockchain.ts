@@ -34,10 +34,10 @@ Create a Astra instance connecting to testnet
 * );
 ```
 
-Getting balance of account `one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7`
+Getting balance of account `0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D`
 ```javascript
 * astra.blockchain
-*   .getBalance({ address: 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7' })
+*   .getBalance({ address: '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D' })
 *   .then((response) => {
 *     console.log('balance in ONEs: ' + fromWei(hexToNumber(response.result), Units.one));
 *   });
@@ -122,7 +122,7 @@ Getting the transaction count of an account
 ```javascript
 * astra.blockchain
 *   .getTransactionCount({
-*     address: 'one1pdv9lrdwl0rg5vglh4xtyrv3wjk3wsqket7zxy',
+*     address: '0x0B585F8DaEfBC68a311FbD4cB20d9174aD174016',
 *   })
 *   .then((response) => {
 *     console.log(hexToNumber(response.result));
@@ -138,12 +138,12 @@ Getting the shard structure and details
 
 Transferring funds using `sendTransaction`
 ```javascript
-// key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+// key corresponds to 0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D, only has testnet balance
 * astra.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
 * async function transfer() {
 *   const txn = astra.transactions.newTx({
-*     to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+*     to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
 *     value: new Unit(1).asOne().toWei(),
 *     // gas limit, you can use string
 *     gasLimit: '21000',
@@ -242,7 +242,7 @@ class Blockchain {
    * @example
    * ```javascript
    * astra.blockchain.getBalance({
-   *   address: 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7',
+   *   address: '0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D',
    *   blockNumber: 'latest'
    * }).then(value => {
    *   console.log(value.result);
@@ -804,7 +804,7 @@ class Blockchain {
    * @example
    * ```javascript
    * astra.blockchain.getStorageAt({
-   *   address: 'one1d0kw95t6kkljmkk9vu0zv25jraut8ngv5vrs5g',
+   *   address: '0x6beCe2D17AB5Bf2DdaC5671E262a921f78B3cd0C',
    *   position: '0x0'
    * }).then((value) => {
    *   console.log(value);
@@ -848,7 +848,7 @@ class Blockchain {
    * @example
    * ```javascript
    * astra.blockchain.getTransactionCount({
-   *   address: "one1d0kw95t6kkljmkk9vu0zv25jraut8ngv5vrs5g"
+   *   address: "0x6beCe2D17AB5Bf2DdaC5671E262a921f78B3cd0C"
    * }).then((value) => {
    *   console.log(value.result);
    * });
@@ -913,7 +913,7 @@ class Blockchain {
    * async function transfer() {
    *   const txn = astra.transactions.newTx({
    *     //  token send to
-   *     to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+   *     to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
    *     // amount to send
    *     value: '10000',
    *     // gas limit, you can use string
@@ -965,7 +965,7 @@ class Blockchain {
    * async function transfer() {
    *   const txn = astra.transactions.newTx({
    *     //  token send to
-   *     to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+   *     to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
    *     // amount to send
    *     value: '10000',
    *     // gas limit, you can use string
@@ -1014,7 +1014,7 @@ class Blockchain {
    * async function transfer() {
    *   const txn = astra.transactions.newTx({
    *     //  token send to
-   *     to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+   *     to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
    *     // amount to send
    *     value: '10000',
    *     // gas limit, you can use string
@@ -1114,7 +1114,7 @@ class Blockchain {
    * @example
    * ```javascript
    * astra.blockchain.estimateGas({
-   *   to: 'one1d0kw95t6kkljmkk9vu0zv25jraut8ngv5vrs5g',
+   *   to: '0x6beCe2D17AB5Bf2DdaC5671E262a921f78B3cd0C',
    *   data: '0xc6888fa10000000000000000000000000000000000000000000000000000000000000003'
    * }).then((value) => {
    *   console.log(value);

@@ -262,7 +262,7 @@ class Transaction extends TransactionBase {
    * @example
    * ```
    * txn.setParams({
-   *   to: 'one1ew56rqrucu6p6n598fmjmnfh8dd4xpg6atne9c',
+   *   to: '0xcBa9A1807cc7341d4e853A772DCd373B5B53051A',
    *   value: '1200',
    *   gasLimit: '230000',
    *   shardID: 1,

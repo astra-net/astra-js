@@ -71,7 +71,7 @@ function checkBlockData(data: any) {
       gasUsed: [astra.utils.isHex],
       hash: [astra.utils.isHash],
       logsBloom: [astra.utils.isHex],
-      miner: [astra.utils.isBech32Address],
+      miner: [astra.utils.isAddress],
       mixHash: [astra.utils.isHash],
       nonce: [astra.utils.isNumber],
       number: [astra.utils.isHex],

@@ -459,7 +459,7 @@ describe('test sign staking transaction', () => {
     );
     const account: any = walletHttp.addByPrivateKey(testTx.privateKey);
     const signedStaking: StakingTransaction = await account.signStaking(stakingTx);
-    expect(signedStaking.getFromAddress()).toEqual(account.bech32Address);
+    expect(signedStaking.getFromAddress().toLowerCase()).toEqual(account.address);
     expect(signedStaking.getSignature()).toBeTruthy();
     expect(signedStaking.getUnsignedRawTransaction()).toBeTruthy();
     expect(signedStaking.getRawTransaction()).toEqual(testTx.encoded);

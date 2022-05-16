@@ -15,7 +15,6 @@ export * from './bytes';
 export * from './rlp';
 export * from './keccak256';
 export * from './errors';
-export * from './bech32';
 
 // export types
 export * from './types';

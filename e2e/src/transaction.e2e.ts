@@ -31,7 +31,7 @@ describe('test Transaction using SDK', () => {
   });
   it('should test signTransaction', async () => {
     const txnObject = {
-      to: astra.crypto.getAddress(receiver.Address).bech32,
+      to: astra.crypto.getAddress(receiver.Address),
       value: '0x64',
       gasLimit: '210000',
       gasPrice: new astra.utils.Unit('100').asGwei().toWei(),
@@ -61,7 +61,7 @@ describe('test Transaction using SDK', () => {
   });
   it('should test transaction observed events', async () => {
     const txnObject = {
-      to: astra.crypto.getAddress(receiver.Address).bech32,
+      to: astra.crypto.getAddress(receiver.Address),
       value: new astra.utils.Unit('100').asGwei().toWei(),
       gasLimit: new astra.utils.Unit('210000').asWei().toWei(),
       gasPrice: new astra.utils.Unit('100').asGwei().toWei(),

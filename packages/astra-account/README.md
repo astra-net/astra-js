@@ -10,11 +10,11 @@ npm install @astra-js/account
 
 ## Usage
 
-Creating new account and display hex and bech32 (one) addresses 
+Creating new account and display addresses 
 ```javascript
 const account = new Account(); // or const account = Account.new()
 console.log(account.checksumAddress);
-console.log(account.bech32Address);
+console.log(account.address);
 ```
 
 Creating new account using private key
@@ -62,7 +62,7 @@ const passphrase = '';
 const keystore = '{"version":3,"id":"33363566-3564-4264-a638-363531666335","address":"7c41e0668b551f4f902cfaec05b5bdca68b124ce","crypto":{"ciphertext":"9b09380afb742838b32d9afc0ec1a3df35dbd7a41e3a160d08c07a4d0e79b855","cipherparams":{"iv":"1cd0e0522260eef055b9170f4825f4a0"},"cipher":"aes-128-ctr","kdf":"scrypt","kdfparams":{"salt":"bf35e36c45cccefcef73a4c900f41c682c94c28630d94d2d1f764760d245f30b","n":8192,"r":8,"p":1,"dklen":32},"mac":"25b4442972356bea02af57eba3b87803086d90b5e7657a57b528b89b1aa25f2f"}}';
 const account = new Account();
 account.fromFile(keystore, passphrase).then(account => {
-    console.log(account.bech32Address);
+    console.log(account.address);
 });
 ```
 
@@ -97,7 +97,7 @@ const { Unit } = require('@astra-js/utils');
 const factory = new TransactionFactory();
 
 const txn = factory.newTx({
-  to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+  to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
   value: new Unit(1).asOne().toWei(),
   // gas limit, you can use string
   gasLimit: '21000',
@@ -162,15 +162,15 @@ Adding account using keystore file
 const keystore = '{"version":3,"id":"33363566-3564-4264-a638-363531666335","address":"7c41e0668b551f4f902cfaec05b5bdca68b124ce","crypto":{"ciphertext":"9b09380afb742838b32d9afc0ec1a3df35dbd7a41e3a160d08c07a4d0e79b855","cipherparams":{"iv":"1cd0e0522260eef055b9170f4825f4a0"},"cipher":"aes-128-ctr","kdf":"scrypt","kdfparams":{"salt":"bf35e36c45cccefcef73a4c900f41c682c94c28630d94d2d1f764760d245f30b","n":8192,"r":8,"p":1,"dklen":32},"mac":"25b4442972356bea02af57eba3b87803086d90b5e7657a57b528b89b1aa25f2f"}}';
 const passphrase = '';
 wallet.addByKeyStore(keystore, passphrase).then(account => {
-    console.log(account.bech32Address);
+    console.log(account.address);
 });
 ```
 
 Creating a new account using passphrase
 ```javascript
-const passphrase = 'astra-one';
+const passphrase = 'astra-net';
 wallet.createAccount(passphrase).then(account => {
-    console.log(account.bech32Address);
+    console.log(account.address);
 });
 ```
 
@@ -178,7 +178,7 @@ Get all accounts in the wallet
 ```javascript
 wallet.accounts.forEach(addr => {
     const account = wallet.getAccount(addr);
-    console.log(account.bech32Address);
+    console.log(account.address);
 });
 ```
 
@@ -190,7 +190,7 @@ wallet.setSigner(signerAddr);
 Sign transaction using wallet, will sign the transaction using the wallet signer
 ```javascript
 const txn = factory.newTx({
-  to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+  to: '0xd6ba69DA5b45eC98b53e3258d7DE756a567B6763',
   value: new Unit(1).asOne().toWei(),
   // gas limit, you can use string
   gasLimit: '21000',

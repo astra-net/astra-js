@@ -17,13 +17,7 @@ import {
   getAddress,
 } from '@astra-js/crypto';
 
-import {
-  isPrivateKey,
-  add0xToString,
-  hexToNumber,
-  AddressSuffix,
-  ChainType,
-} from '@astra-js/utils';
+import { isPrivateKey, add0xToString, hexToNumber, AddressSuffix } from '@astra-js/utils';
 import { Transaction, RLPSign } from '@astra-js/transaction';
 import { StakingTransaction } from '@astra-js/staking';
 import { Messenger, RPCMethod } from '@astra-js/network';
@@ -97,30 +91,6 @@ class Account {
   }
 
   /**
-   * Get bech32 Address
-   *
-   * @example
-   * ```javascript
-   * console.log(account.bech32Address);
-   * ```
-   */
-  get bech32Address(): string {
-    return this.address ? getAddress(this.address).bech32 : '';
-  }
-
-  /**
-   * get Bech32 TestNet Address
-   *
-   * @example
-   * ```javascript
-   * console.log(account.bech32TestNetAddress);
-   * ```
-   */
-  get bech32TestNetAddress(): string {
-    return this.address ? getAddress(this.address).bech32TestNet : '';
-  }
-
-  /**
    * get Shards number with this Account
    *
    * @example
@@ -178,7 +148,7 @@ class Account {
     this.shardID = this.messenger.currentShard || 0;
     this.shards = new Map();
     this.shards.set(this.shardID, {
-      address: `${this.bech32Address}${AddressSuffix}0`,
+      address: `${this.address}${AddressSuffix}0`,
       balance: this.balance || '0',
       nonce: this.nonce || 0,
     });
@@ -227,6 +197,7 @@ class Account {
   async getBalance(blockNumber: string = 'latest'): Promise<Balance> {
     try {
       if (this.messenger) {
+        console.log(RPCMethod.GetBalance);
         const balance = await this.messenger.send(
           RPCMethod.GetBalance,
           [this.address, blockNumber],
@@ -234,6 +205,7 @@ class Account {
           this.messenger.currentShard || 0,
         );
 
+        console.log(RPCMethod.GetTransactionCount);
         const nonce = await this.messenger.send(
           RPCMethod.GetTransactionCount,
           [this.address, blockNumber],
@@ -251,14 +223,18 @@ class Account {
         this.nonce = Number.parseInt(hexToNumber(nonce.result), 10);
         this.shardID = this.messenger.currentShard || 0;
       } else {
+        console.log('no messenger');
         throw new Error('No Messenger found');
       }
-      return {
+      let a = {
         balance: this.balance,
         nonce: this.nonce,
         shardID: this.shardID,
       };
+      console.log(a);
+      return a;
     } catch (error) {
+      console.log('first');
       throw error;
     }
   }
@@ -305,10 +281,7 @@ class Account {
       );
       transaction.setParams({
         ...transaction.txParams,
-        from:
-          this.messenger.chainPrefix === ChainType.Astra
-            ? this.bech32Address
-            : this.checksumAddress || '0x',
+        from: this.checksumAddress || '0x',
         nonce: shardNonce,
       });
     }
@@ -323,10 +296,7 @@ class Account {
           ...obj,
           signature,
           rawTransaction,
-          from:
-            this.messenger.chainPrefix === ChainType.Astra
-              ? this.bech32Address
-              : this.checksumAddress || '0x',
+          from: this.checksumAddress || '0x',
         };
       });
     } else {
@@ -362,11 +332,7 @@ class Account {
         typeof txShardID === 'string' ? Number.parseInt(txShardID, 10) : txShardID,
         blockNumber,
       );
-      staking.setFromAddress(
-        this.messenger.chainPrefix === ChainType.Astra
-          ? this.bech32Address
-          : this.checksumAddress || '0x',
-      );
+      staking.setFromAddress(this.checksumAddress || '0x');
       staking.setNonce(shardNonce);
     }
 
@@ -374,11 +340,7 @@ class Account {
       const [signature, rawTransaction]: [Signature, string] = staking.rlpSign(this.privateKey);
       staking.setRawTransaction(rawTransaction);
       staking.setSignature(signature);
-      staking.setFromAddress(
-        this.messenger.chainPrefix === ChainType.Astra
-          ? this.bech32Address
-          : this.checksumAddress || '0x',
-      );
+      staking.setFromAddress(this.checksumAddress || '0x');
 
       return staking;
     } else {
@@ -417,7 +379,7 @@ class Account {
    * ```javascript
    * console.log(account.getAddressFromShardID(0));
    *
-   * > one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7-0
+   * > 0xFF9a025FdC0fd4b68Ba4e9Bff46476de15ED8f4D-0
    * ```
    */
   getAddressFromShardID(shardID: number) {
@@ -481,7 +443,7 @@ class Account {
       throw nonce.error.message;
     }
     return {
-      address: `${this.bech32Address}${AddressSuffix}${shardID}`,
+      address: `${this.address}${AddressSuffix}${shardID}`,
       balance: hexToNumber(balance.result),
       nonce: Number.parseInt(hexToNumber(nonce.result), 10),
     };
@@ -542,7 +504,7 @@ class Account {
     this.shardID = this.messenger.currentShard || 0;
     this.shards = new Map();
     this.shards.set(this.shardID, {
-      address: `${this.bech32Address}${AddressSuffix}0`,
+      address: `${this.address}${AddressSuffix}0`,
       balance: this.balance || '0',
       nonce: this.nonce || 0,
     });
