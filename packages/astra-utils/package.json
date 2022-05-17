@@ -1,6 +1,6 @@
 {
   "name": "@astra-js/utils",
-  "version": "0.1.58",
+  "version": "0.1.59",
   "description": "utils for astra",
   "main": "dist/index.js",
   "node": "dist/index.js",

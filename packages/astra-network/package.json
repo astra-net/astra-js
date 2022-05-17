@@ -1,6 +1,6 @@
 {
   "name": "@astra-js/network",
-  "version": "0.1.58",
+  "version": "0.1.59",
   "description": "network suites for astra",
   "main": "dist/index.js",
   "node": "dist/index.js",
@@ -18,7 +18,7 @@
   "author": "neeboo@firestack.one",
   "license": "MIT",
   "dependencies": {
-    "@astra-js/utils": "0.1.58",
+    "@astra-js/utils": "0.1.59",
     "cross-fetch": "^3.0.2",
     "mitt": "^1.2.0",
     "websocket": "^1.0.28"
