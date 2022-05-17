@@ -1,6 +1,6 @@
 {
   "name": "@astra-js/contract",
-  "version": "0.1.56",
+  "version": "0.1.58",
   "description": "contract libraries for astra",
   "main": "dist/index.js",
   "node": "dist/index.js",
@@ -18,11 +18,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@astra-js/account": "0.1.57",
-    "@astra-js/crypto": "0.1.56",
-    "@astra-js/network": "0.1.56",
-    "@astra-js/transaction": "0.1.56",
-    "@astra-js/utils": "0.1.56"
+    "@astra-js/account": "0.1.58",
+    "@astra-js/crypto": "0.1.58",
+    "@astra-js/network": "0.1.58",
+    "@astra-js/transaction": "0.1.58",
+    "@astra-js/utils": "0.1.58"
   },
   "gitHead": "56606e9365721729a490c27d6a294e0daf90fbdf"
 }
